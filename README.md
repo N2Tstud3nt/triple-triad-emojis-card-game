@@ -12,3 +12,5 @@ It demonstrates the blue player's penguin 🐧 capturing the left 🐻 and right
 In total, after this one interaction, the blue player gains 3 points and the red player gains 1 point.
 
 ![Example](example.gif)
+
+**Disclaimer**: This is just a simple proof of concept (*minimal working implementation of the idea*), made in a day.
