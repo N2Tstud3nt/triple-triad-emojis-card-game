@@ -1,0 +1,104 @@
+    .grid-container {
+      border: thin solid rgba(0, 0, 0, 0.8);
+      display: grid;
+      grid-gap: 0px;
+      grid-template-columns: auto auto auto;
+      width: 100%;
+      height: 100%;
+      padding: 0%;
+      margin: 0%;
+      font-size: calc(2.5vw);/* + 2vh);*/
+      text-align: center;
+      z-index: 1000;
+    }
+    .grid-item {
+      overflow: hidden;
+      border: thin solid rgba(0, 0, 0, 0.8);
+      width: calc(100%-1px);
+      height: calc(100%-1px);
+      z-index: 1002;
+      transform: scale(0.9,0.9);
+      margin: 5%;
+    }
+    .card-point {
+      width: 81%;
+      height: 81%;
+      z-index: 1003;
+      transform: rotateY(0deg) rotate(45deg) scale(0.9,0.9);
+    }
+    .card-center {
+      visibility: visible;
+      z-index: 1001;
+      transform: rotateY(0deg) rotate(45deg) scale(1.75,1.75);
+      margin: 0%;
+    }
+    .cp-top {
+      transform: rotateY(0deg) rotate(45deg) scale(0.9,0.9) translateX(-4%) translateY(-10%);
+    }
+    .cp-rig {
+      transform: rotateY(0deg) rotate(45deg) scale(0.9,0.9) translateX(+15%) translateY(-9%);
+    }
+    .cp-lef {
+      transform: rotateY(0deg) rotate(45deg) scale(0.9,0.9) translateX(-4%) translateY(+10%);
+    }
+    .cp-bot {
+      transform: rotateY(0deg) rotate(45deg) scale(0.9,0.9) translateX(+15%) translateY(+9%);
+    }
+    .crot45 {
+      transform: rotateY(0deg) rotate(-45deg);
+    }
+    .grid-item small {
+      position: relative;
+      top: 6%;
+    }
+    .offset-top {
+      position: relative;
+      top: 6%;
+      right: 3%;
+    }
+    .spin {
+    -webkit-animation:spin 0.5s linear infinite;
+    -moz-animation:spin 0.5s linear infinite;
+    animation:spin 0.5s linear infinite;
+    }
+    @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+    @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+    @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+    .no-spin {
+      transform: rotateY(0deg) rotate(0deg);
+    }
+    .grow {
+    -webkit-animation:grow 0.5s linear infinite;
+    -moz-animation:grow 0.5s linear infinite;
+    animation:grow 0.5s linear infinite;
+    }
+    @-moz-keyframes grow { 
+      0% { -moz-transform: scale(0); }
+      100% { -moz-transform: scale(1); } 
+    }
+    @-webkit-keyframes grow { 
+      0% { -webkit-transform: scale(0); } 
+      100% { -webkit-transform: scale(1); } 
+    }
+    @keyframes grow { 
+      0% { -webkit-transform: scale(0); transform:scale(0); }
+      100% { -webkit-transform: scale(1); transform:scale(1); } 
+    }
+    .no-grow {
+      transform: scale(1);
+    }
+    .team-blue .grid-container {background-color: rgba(75, 75, 255, 0.85);}
+    .team-blue .grid-item {background-color: rgba(255, 255, 255, 1);}
+    .team-blue .card-team {background-color: rgba(50, 50, 255, 1);}
+    .team-blue .card-cost {background-color: rgba(200, 200, 255, 1);}
+    .team-blue .abi {background-color: rgba(255, 255, 255, 0.85);}
+    .team-red .grid-container {background-color: rgba(255, 75, 75, 0.85);}
+    .team-red .grid-item {background-color: rgba(255, 255, 255, 1);}
+    .team-red .card-team {background-color: rgba(255, 50, 50, 1);}
+    .team-red .card-cost {background-color: rgba(255, 200, 200, 1);}
+    .team-red .abi {background-color: rgba(255, 255, 255, 0.85);}
+    .team-purple .grid-container {background-color: rgba(200, 80, 0, 0.85);}
+    .team-purple .grid-item {background-color: rgba(255, 255, 255, 1);}
+    .team-purple .card-team {background-color: rgba(160, 45, 0, 1);}
+    .team-purple .card-cost {background-color: rgba(225, 180, 120, 1);}
+    .team-purple .abi {background-color: rgba(255, 255, 255, 0.85);}

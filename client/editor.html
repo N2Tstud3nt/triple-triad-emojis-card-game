@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Tic-Tac-Toe Cards</title>
+  <meta name="Craft cards and duel on a tic-tac-toe grid." content="">
+  <meta name="VeseliVepar" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/game-style.css">
+  <link rel="stylesheet" type="text/css" href="css/card-style.css">
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!--<script src="/socket.io/socket.io.js"></script>-->
+  <script type="text/javascript" src="js/properties.js"></script>
+  <script type="text/javascript" src="js/card_template.js"></script>
+  <script type="text/javascript" src="js/editor.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="contained text-left float-left nametag">Ability Guide</div>
+      <div id="main-title" class="contained arena-title">Build A Deck (24/125)</div>
+      <div class="contained text-left float-left nametag">Instructions</div>
+    </div>
+    <div class="container">
+      <div id="blue-deckpad" class="contained fleft">
+        <small class="info-box text-left">
+          <small>
+            ⭐ <b>Hero</b> - Increase maximal cost by 7. <br>
+            🔥 <b>Underdog</b> - Captures attacked tied sides if they have a higher card cost. <br>
+            ⚔️ <b>Tiebreaker</b> - If 2 or more attacked sides are tied with this, capture them.<br>
+            💰 <b>Bribe</b> - If 2 or more attacked sides have equal cost as this, capture them.<br>
+            ☘️ <b>Ambush</b> - If my cost equals the sum of all attacked sides, capture them.<br>
+            👋 <b>Reach</b> - Attacks cards over the adjacent allied cards. <br>
+            ⛓️ <b>Chain</b> - If I'm captured or capture with an ability, replay captured card(s).<br>
+            🧛 <b>Veil</b> - Hide the sides and abilities of this card until it captures or is captured.<br>
+            📌 <b>Spike</b> - Deal a normal attack to cards normally played next to this card.<br>
+          </small>
+        </small>
+      </div>
+      <div id="arena-deckpad" class="contained fcenter">
+        <!-- 1st row */ -->
+        <div id="arena-slot-1" class="arena-part"><div class="overlay-card team-purple"></div></div>
+        <div id="arena-slot-2" class="arena-part"><div class="overlay-card team-purple"></div></div>
+        <div id="arena-slot-3" class="arena-part"><div class="overlay-card team-purple"></div></div>
+        <!-- 2nd row */ -->
+        <div id="arena-slot-4" class="arena-part"><div class="overlay-card team-purple"></div></div>
+        <div id="arena-slot-5" class="arena-part"><div class="overlay-card team-purple"></div></div>
+        <div id="arena-slot-6" class="arena-part"><div class="overlay-card team-purple"></div></div>
+        <!-- 3rd row */ -->
+        <div id="arena-slot-7" class="arena-part noselect"><div class="overlay-card team-purple remove-bg-color">
+          <div style="height: 8%"></div>
+          <small id="btn-export-deck" class="clickable" style="border: thin solid rgba(0, 0, 0, 0.8); padding: 3%; background-color: rgba(255, 255, 50, 1);">
+            <small>Export deck</small>
+          </small>
+          <div style="height: 8%"></div>
+          <small id="btn-import-deck" class="clickable" style="border: thin solid rgba(0, 0, 0, 0.8); padding: 3%; background-color: rgba(255, 50, 50, 1);">
+            <small>Import deck</small>
+          </small>
+        </div></div>
+        <div id="arena-slot-8" class="arena-part"><div class="overlay-card team-purple remove-bg-color">
+          <small>Nickname</small>
+          <input type="text" id="nickname-box" maxlength="20" style="width: 100%; height: 2em; text-align: center; font-size: calc(1.5vw); background-color: rgba(255, 200, 255, 1);" placeholder="Enter your name">
+        </div></div>
+        <div id="arena-slot-9" class="arena-part noselect"><div class="overlay-card team-purple remove-bg-color">
+          <div style="height: 8%"></div>
+          <small id="btn-join-game" class="clickable" style="border: thin solid rgba(0, 0, 0, 0.8); padding: 3%; padding-left: 5%; padding-right: 5%; background-color: rgba(50, 255, 255, 1);">
+            <small>Join game</small>
+          </small>
+          <div style="height: 8%"></div>
+          <small id="btn-host-game" class="clickable" style="border: thin solid rgba(0, 0, 0, 0.8); padding: 3%; background-color: rgba(50, 50, 255, 1);">
+            <small>Host game</small>
+          </small>
+        </div></div>
+      </div>
+      <div id="red-deckpad" class="contained fright"><!---->
+        <small class="info-box pad-left text-left">
+          Click on # to import a card or click on the sides, abilities and images to change them manually.<br><br>
+          Deck<br>
+          <small id="rules_mcc">Max. card cost is __/⭐__/⭐⭐__.</small><br>
+          <small id="rules_mcs">Card sides range over 1-A (1-10).</small><br>
+          <small id="rules_ds">Sum of all sides can't exceed ___.</small><br>
+          <br>Gameplay<br>
+          <small id="gameplay_info">
+            Two players alternate placing cards on a 3×3 grid. The decks are public (except 🧛 cards).
+            Played card attacks adjacent cards of opposite loyalty. Attacked cards with weaker sides are captured and change loyalty.
+            Game ends on full grid, and the player with most captures wins.
+          </small><br>
+        </small>
+      </div>
+    </div>
+    <div id="app_version_div" class="container foot">
+      {{window.app_version}}
+    </div>
+  <!-- End Document
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  </body>
+</html>

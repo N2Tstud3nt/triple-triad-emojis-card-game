@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Tic-Tac-Toe Cards</title>
+  <meta name="Craft cards and duel on a tic-tac-toe grid." content="">
+  <meta name="VeseliVepar" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/game-style.css">
+  <link rel="stylesheet" type="text/css" href="css/card-style.css">
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="js/properties.js"></script>
+  <script type="text/javascript" src="js/card_template.js"></script>
+  <script type="text/javascript" src="js/arena.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="player-title" class="contained text-left float-left nametag smalltxt">Player: 0</div>
+      <div id="main-title" class="contained arena-title">Tic-Tac-Toe Cards</div>
+      <div id="opponent-title" class="contained text-left float-left nametag smalltxt">Opponent: 0</div>
+    </div>
+    <div class="container">
+      <div id="blue-deckpad" class="contained fleft">
+        <div id="deck-slot-b1" class="deck-part float-left "><div class="overlay-card team-blue"></div></div>
+        <div id="deck-slot-b2" class="deck-part float-left "><div class="overlay-card team-blue"></div></div>
+        <div id="deck-slot-b3" class="deck-part float-left "><div class="overlay-card team-blue"></div></div>
+        <div id="deck-slot-b4" class="deck-part float-left "><div class="overlay-card team-blue"></div></div>
+        <div id="deck-slot-b5" class="deck-part float-left "><div class="overlay-card team-blue"></div></div>
+        <div id="deck-slot-b6" class="deck-part float-left "><div class="overlay-card team-blue"></div></div>
+      </div>
+      <div id="arena-deckpad" class="contained fcenter">
+        <!-- 1st row */ -->
+        <div id="arena-slot-1" class="arena-part"><div class="overlay-card"></div></div>
+        <div id="arena-slot-2" class="arena-part"><div class="overlay-card"></div></div>
+        <div id="arena-slot-3" class="arena-part"><div class="overlay-card"></div></div>
+        <!-- 2nd row */ -->
+        <div id="arena-slot-4" class="arena-part"><div class="overlay-card"></div></div>
+        <div id="arena-slot-5" class="arena-part"><div class="overlay-card"></div></div>
+        <div id="arena-slot-6" class="arena-part"><div class="overlay-card"></div></div>
+        <!-- 3rd row */ -->
+        <div id="arena-slot-7" class="arena-part"><div class="overlay-card"></div></div>
+        <div id="arena-slot-8" class="arena-part"><div class="overlay-card"></div></div>
+        <div id="arena-slot-9" class="arena-part"><div class="overlay-card"></div></div>
+      </div>
+      <div id="red-deckpad" class="contained fright">
+        <div id="deck-slot-r1" class="deck-part float-right "><div class="overlay-card team-red"></div></div>
+        <div id="deck-slot-r2" class="deck-part float-right "><div class="overlay-card team-red"></div></div>
+        <div id="deck-slot-r3" class="deck-part float-right "><div class="overlay-card team-red"></div></div>
+        <div id="deck-slot-r4" class="deck-part float-right "><div class="overlay-card team-red"></div></div>
+        <div id="deck-slot-r5" class="deck-part float-right "><div class="overlay-card team-red"></div></div>
+        <div id="deck-slot-r6" class="deck-part float-right "><div class="overlay-card team-red"></div></div>
+      </div>
+    </div>
+    <div id="app_version_div" class="container foot">
+      {{window.app_version}}
+    </div>
+  <!-- End Document
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  </body>
+</html>
